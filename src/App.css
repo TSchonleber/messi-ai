@@ -1,0 +1,365 @@
+.app {
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ---------- Nav ---------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 6vw;
+  background: rgba(11, 29, 51, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(108, 172, 228, 0.15);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 1.25rem;
+}
+
+.nav-logo .ball {
+  font-size: 1.5rem;
+}
+
+.nav-logo .ai {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.nav-links a:hover {
+  color: var(--sky-light);
+}
+
+.nav-cta {
+  background: linear-gradient(135deg, var(--sky), var(--sky-dark));
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(108, 172, 228, 0.35);
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 3rem;
+  padding: 5rem 6vw 6rem;
+  background:
+    radial-gradient(ellipse 60% 50% at 80% 10%, rgba(108, 172, 228, 0.18), transparent),
+    radial-gradient(ellipse 50% 40% at 10% 90%, rgba(245, 197, 24, 0.08), transparent);
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(245, 197, 24, 0.12);
+  color: var(--gold-soft);
+  border: 1px solid rgba(245, 197, 24, 0.3);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 .gradient {
+  background: linear-gradient(90deg, var(--sky-light), var(--sky), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  max-width: 34rem;
+  margin-bottom: 2rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--gold), #e0a800);
+  color: var(--navy);
+  border: none;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(245, 197, 24, 0.35);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--sky-light);
+  border: 1px solid rgba(108, 172, 228, 0.4);
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.15s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(108, 172, 228, 0.1);
+}
+
+.hero-stats {
+  display: flex;
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.hero-stat .num {
+  font-family: 'Sora', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--gold);
+}
+
+.hero-stat .label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Chat preview ---------- */
+.chat-card {
+  background: var(--navy-2);
+  border: 1px solid rgba(108, 172, 228, 0.2);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(108, 172, 228, 0.15);
+  margin-bottom: 1rem;
+}
+
+.chat-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--sky), var(--sky-dark));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.chat-header .name {
+  font-weight: 700;
+  font-family: 'Sora', sans-serif;
+}
+
+.chat-header .status {
+  font-size: 0.78rem;
+  color: #69db7c;
+}
+
+.chat-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  min-height: 220px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.msg {
+  max-width: 85%;
+  padding: 0.7rem 1rem;
+  border-radius: 14px;
+  font-size: 0.92rem;
+  white-space: pre-wrap;
+}
+
+.msg.bot {
+  background: rgba(108, 172, 228, 0.14);
+  border: 1px solid rgba(108, 172, 228, 0.2);
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+.msg.user {
+  background: linear-gradient(135deg, var(--sky-dark), var(--sky));
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.chat-input-row input {
+  flex: 1;
+  background: rgba(11, 29, 51, 0.8);
+  border: 1px solid rgba(108, 172, 228, 0.25);
+  border-radius: 999px;
+  padding: 0.7rem 1.1rem;
+  color: var(--white);
+  font-family: inherit;
+  font-size: 0.92rem;
+  outline: none;
+}
+
+.chat-input-row input:focus {
+  border-color: var(--sky);
+}
+
+.chat-input-row button {
+  background: var(--gold);
+  color: var(--navy);
+  border: none;
+  border-radius: 999px;
+  padding: 0 1.2rem;
+  font-weight: 700;
+}
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 5rem 6vw;
+}
+
+.section-title {
+  text-align: center;
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+}
+
+.section-sub {
+  text-align: center;
+  color: var(--text-muted);
+  max-width: 38rem;
+  margin: 0 auto 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: var(--navy-2);
+  border: 1px solid rgba(108, 172, 228, 0.15);
+  border-radius: 16px;
+  padding: 1.8rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(245, 197, 24, 0.4);
+}
+
+.feature-card .icon {
+  font-size: 2rem;
+  margin-bottom: 0.9rem;
+}
+
+.feature-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+}
+
+.feature-card p {
+  color: var(--text-muted);
+  font-size: 0.93rem;
+}
+
+/* ---------- Pitch stripe ---------- */
+.stripe {
+  background: linear-gradient(90deg, var(--sky-dark), var(--sky), var(--sky-dark));
+  padding: 3.5rem 6vw;
+  text-align: center;
+}
+
+.stripe h2 {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: #fff;
+}
+
+.stripe p {
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 1.5rem;
+}
+
+.stripe .btn-primary {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  padding: 2.5rem 6vw;
+  border-top: 1px solid rgba(108, 172, 228, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  color: var(--text-muted);
+  font-size: 0.88rem;
+}
+
+@media (max-width: 880px) {
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 3rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
