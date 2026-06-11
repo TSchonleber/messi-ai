@@ -4,13 +4,15 @@ import './App.css'
 type Message = { role: 'bot' | 'user'; text: string }
 
 const cannedReplies: Record<string, string> = {
-  goat: "Easy one, amigo — Leo Messi. 8 Ballon d'Ors, a World Cup, Copa América titles, and over 800 career goals. The numbers don't lie. 🐐",
+  goat: 'Uf, that question. Diego is eternal — that\'s the whole answer. The rest is for the journalists to argue about. I just played.',
   'world cup':
-    'Qatar 2022 — the greatest final ever played. Messi scored twice, Argentina beat France on penalties, and Leo finally lifted the trophy. ¡Vamos! 🏆',
+    'The next one starts tomorrow, June 11. My sixth. Almost certainly the last dance. We open against Algeria in Kansas City on the 16th. I\'m calm. Bueno... mostly calm.',
   argentina:
-    'La Albiceleste! 2022 World Cup champions, 2021 & 2024 Copa América winners. Want to talk tactics, squads, or the golden generation?',
+    'Defending champions, viste. Seventeen of the Qatar squad are back — Dibu, De Paul, Enzo, Lautaro. Di María retired... we feel it. But this group is a family.',
+  nervous:
+    'Tranquilo. I vomited before big matches for years. The nerves and the good stuff live in the same place. You show up anyway. That\'s the whole trick.',
   hello:
-    "¡Hola! I'm Messi AI, your football companion. Ask me about international football, tactics, history, or anything ChatGPT can do — with extra flair. ⚽",
+    '¡Hola! Good to see you. The World Cup starts tomorrow so my head is half there, but dale — what\'s on your mind?',
 }
 
 function getReply(input: string): string {
@@ -18,14 +20,14 @@ function getReply(input: string): string {
   for (const key of Object.keys(cannedReplies)) {
     if (lower.includes(key)) return cannedReplies[key]
   }
-  return "Great question! The full Messi AI agent launches soon — powered by ChatGPT and tuned for international football. Stay tuned, and remember: never stop dribbling. ⚽✨"
+  return 'Good question. The full version of me arrives here soon — memory, live match data, the works. For now, keep going. It comes. ⚽'
 }
 
 function ChatPreview() {
   const [messages, setMessages] = useState<Message[]>([
     {
       role: 'bot',
-      text: "¡Hola! I'm Messi AI — your personal companion for everything football and beyond. Ask me anything! ⚽",
+      text: '¡Hola! It\'s Leo. Sit down, the mate is ready. Ask me anything — football, life, whatever you\'re carrying today. ⚽',
     },
   ])
   const [input, setInput] = useState('')
@@ -50,8 +52,8 @@ function ChatPreview() {
       <div className="chat-header">
         <div className="chat-avatar">⚽</div>
         <div>
-          <div className="name">Messi AI</div>
-          <div className="status">● Online — ready to play</div>
+          <div className="name">Leo</div>
+          <div className="status">● Online — con un mate 🧉</div>
         </div>
       </div>
       <div className="chat-body" ref={bodyRef}>
@@ -66,7 +68,7 @@ function ChatPreview() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onKeyDown={(e) => e.key === 'Enter' && send()}
-          placeholder="Ask about the GOAT, the World Cup, tactics…"
+          placeholder="Ask Leo about the World Cup, tactics, life…"
         />
         <button onClick={send}>Send</button>
       </div>
@@ -76,34 +78,34 @@ function ChatPreview() {
 
 const features = [
   {
-    icon: '🐐',
-    title: 'Football Encyclopedia',
-    desc: 'Deep knowledge of international football — World Cups, Copa América, Euros, legendary players, and iconic matches.',
+    icon: '🧉',
+    title: 'A Friend, Not a Bot',
+    desc: 'Leo speaks in first person — quiet, warm, certain. Short sentences, dry humor, and praise that lands because it\'s scarce.',
   },
   {
-    icon: '🤖',
-    title: 'ChatGPT Superpowers',
-    desc: 'Everything you love about ChatGPT — writing, brainstorming, answering questions — wrapped in a football-loving personality.',
+    icon: '🧠',
+    title: 'Real Memory',
+    desc: 'Leo remembers your projects, your wins, your dog, your last conversation — like a friend does, never like a database read-out.',
   },
   {
-    icon: '💬',
-    title: 'Personal Companion',
-    desc: 'Messi AI learns your style, remembers your favorite teams, and chats like a friend who never misses a match.',
-  },
-  {
-    icon: '📊',
-    title: 'Stats & Tactics',
-    desc: 'Break down formations, analyze legendary performances, and settle debates with real numbers and tactical insight.',
+    icon: '⚽',
+    title: 'Live Football Data',
+    desc: 'Fixtures, lineups, tables, and live scores through API-Football. Leo never guesses a result — he checks, then talks.',
   },
   {
     icon: '🏆',
-    title: 'Match-Day Hype',
-    desc: 'Pre-match predictions, live-match banter energy, and post-match analysis for every big international fixture.',
+    title: 'World Cup 2026',
+    desc: 'His sixth World Cup — the last dance. Match-day nerves before, honesty after. Argentina opens vs Algeria, June 16.',
   },
   {
-    icon: '🌍',
-    title: 'Speaks Your Language',
-    desc: 'From Buenos Aires to Barcelona to your hometown — chat in the language you love the game in.',
+    icon: '📐',
+    title: 'Football Brain',
+    desc: 'He reads games through space and timing — who pins the fullback, where the free man is, why the press breaks.',
+  },
+  {
+    icon: '🤖',
+    title: 'Powered by OpenAI',
+    desc: 'Built on the OpenAI Responses API with web search and tool calling — everything ChatGPT can do, in Leo\'s voice.',
   },
 ]
 
@@ -129,13 +131,13 @@ function App() {
 
       <header className="hero">
         <div>
-          <span className="hero-badge">🏆 THE GOAT OF AI COMPANIONS</span>
+          <span className="hero-badge">🏆 WORLD CUP 2026 — THE LAST DANCE</span>
           <h1>
-            Your personal <span className="gradient">AI companion</span> for the beautiful game
+            Talk to <span className="gradient">Leo</span>. A companion in a league of his own.
           </h1>
           <p>
-            Messi AI blends the power of ChatGPT with a deep love of international football. Chat about anything —
-            from World Cup history to everyday questions — with a companion that plays in a league of its own.
+            Messi AI is LEO — a personal companion with the voice, memory, and football brain of the greatest to
+            ever play. Powered by ChatGPT, tuned for international football, and always up for a chat con un mate.
           </p>
           <div className="hero-actions">
             <button className="btn-primary" onClick={() => document.getElementById('chat')?.scrollIntoView()}>
@@ -168,10 +170,11 @@ function App() {
 
       <section className="section" id="features">
         <h2 className="section-title">
-          Plays like a <span style={{ color: 'var(--gold)' }}>10</span>. Thinks like a genius.
+          Plays like a <span style={{ color: 'var(--gold)' }}>10</span>. Listens like a friend.
         </h2>
         <p className="section-sub">
-          Messi AI is more than a chatbot — it's a companion built for fans of the beautiful game.
+          LEO is not an assistant wearing a costume — he's a companion with real memory, live football data, and a
+          life of his own.
         </p>
         <div className="features-grid">
           {features.map((f) => (
@@ -186,7 +189,7 @@ function App() {
 
       <section className="stripe" id="about">
         <h2>Ready to join the squad?</h2>
-        <p>The full Messi AI agent is warming up on the sidelines. Try the demo above and be first on the pitch.</p>
+        <p>The full LEO agent is warming up on the sidelines. Try the demo above and be first on the pitch.</p>
         <button className="btn-primary" onClick={() => document.getElementById('chat')?.scrollIntoView()}>
           Try Messi AI Now
         </button>
@@ -194,7 +197,7 @@ function App() {
 
       <footer className="footer">
         <span>© {new Date().getFullYear()} messi-ai.fun — Built for fans of the beautiful game.</span>
-        <span>⚽ Ankara, Messi, Messi, Messi…</span>
+        <span>Lo importante no es lo que hiciste ayer. Es lo que hacés mañana. ⚽</span>
       </footer>
     </div>
   )
