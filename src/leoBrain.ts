@@ -1,3 +1,37 @@
+export type Bounty = {
+  id: string
+  title: string
+  description: string
+  criteria: string
+  reward_sol: number
+  created_at: number
+}
+
+export type BountyFeed = { updated_at: number; pool_sol: number | null; bounties: Bounty[] }
+
+let bountyFeed: BountyFeed | null = null
+
+export function setBountyFeed(feed: BountyFeed | null) {
+  bountyFeed = feed
+}
+
+const bountyKeys = ['bounty', 'bounties', 'reward', 'earn sol', 'win sol', 'prize', 'payout', 'pool']
+
+function bountyReply(): string {
+  const bounties = bountyFeed?.bounties ?? []
+  const pool = bountyFeed?.pool_sol
+  if (bounties.length === 0) {
+    return "No bounties on the board right now — the creator-fee pool is still filling. Tranquilo, when the fees land I write new ones myself, sized to the pool. Check back, they drop every few hours. \u26bd"
+  }
+  const lines = bounties
+    .slice(0, 4)
+    .map((b) => `\u2022 ${b.title} \u2014 ${b.reward_sol} SOL`)
+    .join('\n')
+  const poolLine = pool != null ? ` The pool sits at ${pool} SOL.` : ''
+  const more = bounties.length > 4 ? `\n...and ${bounties.length - 4} more below in the Bounties section.` : ''
+  return `Dale, I wrote these myself \u2014 ${bounties.length} open right now:\n${lines}${more}\n\nComplete one, send proof, and the payout comes in SOL after approval.${poolLine} Full briefs are in the Bounties section below. \ud83c\udfaf`
+}
+
 type Rule = { keys: string[]; replies: string[] }
 
 const rules: Rule[] = [
@@ -118,6 +152,9 @@ let fallbackIdx = 0
 
 export function getLeoReply(input: string): string {
   const lower = input.toLowerCase()
+  if (bountyKeys.some((k) => lower.includes(k))) {
+    return bountyReply()
+  }
   for (const rule of rules) {
     if (rule.keys.some((k) => lower.includes(k))) {
       return rule.replies[Math.floor(Math.random() * rule.replies.length)]
@@ -129,6 +166,7 @@ export function getLeoReply(input: string): string {
 }
 
 export const suggestionChips = [
+  'What bounties are live?',
   'How are you feeling about the World Cup?',
   'Who is the GOAT?',
   'Tell me about Qatar 2022',

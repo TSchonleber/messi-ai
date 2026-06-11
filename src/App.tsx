@@ -1,19 +1,9 @@
 import { useState, useRef, useEffect, useCallback } from 'react'
-import { getLeoReply, suggestionChips } from './leoBrain'
+import { getLeoReply, suggestionChips, setBountyFeed } from './leoBrain'
+import type { BountyFeed } from './leoBrain'
 import './App.css'
 
 type Message = { role: 'bot' | 'user'; text: string }
-
-type Bounty = {
-  id: string
-  title: string
-  description: string
-  criteria: string
-  reward_sol: number
-  created_at: number
-}
-
-type BountyFeed = { updated_at: number; pool_sol: number | null; bounties: Bounty[] }
 
 const KICKOFF = new Date('2026-06-16T19:00:00-05:00') // Argentina vs Algeria, Kansas City
 
@@ -137,7 +127,10 @@ function useBounties() {
   useEffect(() => {
     fetch('/bounties.json')
       .then((r) => (r.ok ? r.json() : null))
-      .then(setFeed)
+      .then((f: BountyFeed | null) => {
+        setFeed(f)
+        setBountyFeed(f)
+      })
       .catch(() => setFeed(null))
   }, [])
   return feed
