@@ -619,6 +619,7 @@
 
 .bounty-card {
   position: relative;
+  animation: bounty-in 0.5s ease both;
   background: var(--navy-2);
   border: 1px solid rgba(245, 197, 24, 0.25);
   border-radius: 16px;
@@ -661,6 +662,17 @@
   font-style: italic;
   border-top: 1px dashed rgba(108, 172, 228, 0.25);
   padding-top: 0.6rem;
+}
+
+@keyframes bounty-in {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 .bounty-empty {

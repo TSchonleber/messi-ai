@@ -172,7 +172,7 @@ function Bounties() {
       ) : (
         <div className="bounties-grid">
           {bounties.map((b, i) => (
-            <div key={b.id} className="bounty-card reveal" style={{ transitionDelay: `${i * 70}ms` }}>
+            <div key={b.id} className="bounty-card" style={{ animationDelay: `${i * 70}ms` }}>
               <div className="bounty-reward">{b.reward_sol} SOL</div>
               <h3>{b.title}</h3>
               <p>{b.description}</p>
