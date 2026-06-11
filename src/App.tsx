@@ -4,6 +4,17 @@ import './App.css'
 
 type Message = { role: 'bot' | 'user'; text: string }
 
+type Bounty = {
+  id: string
+  title: string
+  description: string
+  criteria: string
+  reward_sol: number
+  created_at: number
+}
+
+type BountyFeed = { updated_at: number; pool_sol: number | null; bounties: Bounty[] }
+
 const KICKOFF = new Date('2026-06-16T19:00:00-05:00') // Argentina vs Algeria, Kansas City
 
 function useCountdown(target: Date) {
@@ -121,6 +132,59 @@ function ChatPreview() {
   )
 }
 
+function useBounties() {
+  const [feed, setFeed] = useState<BountyFeed | null>(null)
+  useEffect(() => {
+    fetch('/bounties.json')
+      .then((r) => (r.ok ? r.json() : null))
+      .then(setFeed)
+      .catch(() => setFeed(null))
+  }, [])
+  return feed
+}
+
+function Bounties() {
+  const feed = useBounties()
+  const bounties = feed?.bounties ?? []
+  return (
+    <section className="section reveal" id="bounties">
+      <h2 className="section-title">
+        Leo's <span style={{ color: 'var(--gold)' }}>Bounties</span>
+      </h2>
+      <p className="section-sub">
+        A share of the token's creator fees funds community bounties. Leo writes them, the pool sizes them, and
+        winners are paid in SOL.
+        {feed?.pool_sol != null && (
+          <>
+            {' '}
+            Current reward pool: <strong style={{ color: 'var(--gold)' }}>{feed.pool_sol.toFixed(2)} SOL</strong>.
+          </>
+        )}
+      </p>
+      {bounties.length === 0 ? (
+        <div className="bounty-empty">
+          <span className="bounty-empty-icon">🎯</span>
+          <p>
+            No open bounties right now. They drop when the creator-fee pool fills — tranquilo, the next one is
+            coming.
+          </p>
+        </div>
+      ) : (
+        <div className="bounties-grid">
+          {bounties.map((b, i) => (
+            <div key={b.id} className="bounty-card reveal" style={{ transitionDelay: `${i * 70}ms` }}>
+              <div className="bounty-reward">{b.reward_sol} SOL</div>
+              <h3>{b.title}</h3>
+              <p>{b.description}</p>
+              <p className="bounty-criteria">{b.criteria}</p>
+            </div>
+          ))}
+        </div>
+      )}
+    </section>
+  )
+}
+
 function Countdown() {
   const { days, hours, mins, secs } = useCountdown(KICKOFF)
   const cells = [
@@ -195,6 +259,7 @@ function App() {
         <div className="nav-links">
           <a href="#features">Features</a>
           <a href="#fixtures">Fixtures</a>
+          <a href="#bounties">Bounties</a>
           <a href="#chat">Chat</a>
           <a href="#about">About</a>
         </div>
@@ -261,6 +326,8 @@ function App() {
           ))}
         </div>
       </section>
+
+      <Bounties />
 
       <section className="section reveal" id="features">
         <h2 className="section-title">
