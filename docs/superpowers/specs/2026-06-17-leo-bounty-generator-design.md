@@ -97,15 +97,24 @@ Scheduled `cron` + manual `workflow_dispatch`. Steps: checkout, setup Python, in
 deps, run `agent/bounty.py`, commit `public/bounties.json` if changed, push. Uses
 `OPENAI_API_KEY` from repo secrets. Commit message names the drop count.
 
-### 5. Bounties feed UI (in `src/`)
-- New `Bounties` section/component between Features and the closing CTA (plus optional
-  deep-link anchor `#bounties` in the nav).
-- Fetches `/bounties.json` on load; renders newest-first cards: title, reward badge,
+### 5. Bounties feed UI + navigation (in `src/`)
+**Navigation (decided):** teaser-on-landing + dedicated full page.
+- Add `react-router-dom` (new dep). Two routes: `/` (landing) and `/bounties` (full feed).
+- **Nav:** add a "Bounties" link (routes to `/bounties`) + a hero/CTA button.
+- **Landing teaser:** a `BountiesTeaser` section showing the latest ~3 drops with a
+  "See all bounties →" button to `/bounties`. Sits between Features and the closing CTA.
+  Shows visitors that Leo is actively dropping bounties without bloating the landing.
+- **`/bounties` page:** full feed, newest-first, all drops from the JSON (with simple
+  client-side "load more" or pagination if the list is long).
+- **Shared `BountyCard` component** used by both teaser and full page.
+
+`BountyCard`:
+- Fetches `/bounties.json` (page/teaser fetch on load); renders: title, reward badge,
   deadline countdown, task, deliverables list, category tag, "fresh drop" styling.
-- Each card: **Copy** (formats the post-ready text to clipboard) + **Open in pump.fun GO**
-  via a `postToBounty(bounty)` adapter — today builds the prefilled create-form deep-link;
+- **Copy** (formats post-ready text to clipboard) + **Open in pump.fun GO** via a
+  `postToBounty(bounty)` adapter — today builds the prefilled create-form deep-link;
   later this single function can call a real API (the seam).
-- Empty/loading/error states.
+- Empty / loading / error states on both teaser and full page.
 
 ### 6. Site polish (in `src/App.tsx` / `App.css`)
 Keep structure; sharpen type scale, spacing rhythm, motion (subtle reveal/hover), and
