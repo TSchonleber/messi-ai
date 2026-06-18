@@ -26,7 +26,7 @@ export function Landing() {
 
   const all = bounties ?? []
   const freshCount = all.filter((b) => isFresh(b.createdAt)).length
-  const totalValue = all.reduce((s, b) => s + (b.rewardUsd || 0), 0)
+  const totalSol = all.reduce((s, b) => s + (b.rewardSol || 0), 0)
   const teaser = all.slice(0, 3)
 
   return (
@@ -64,8 +64,8 @@ export function Landing() {
               <div className="label">fresh today</div>
             </div>
             <div className="hero-stat">
-              <div className="num">{loading ? '—' : `$${totalValue.toLocaleString()}`}</div>
-              <div className="label">in rewards</div>
+              <div className="num">{loading ? '—' : `◎ ${+totalSol.toFixed(2)}`}</div>
+              <div className="label">SOL in rewards</div>
             </div>
           </div>
         </div>
