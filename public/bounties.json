@@ -1,0 +1,130 @@
+[
+  {
+    "id": "2026-06-17-quote-the-launch",
+    "createdAt": "2026-06-17T23:40:00Z",
+    "title": "Get three crypto accounts to quote the launch",
+    "reward": "$300",
+    "rewardUsd": 300,
+    "deadline": "72 hours",
+    "task": "Tranquilo, nothing fancy. Find three real crypto accounts on X, each over 10k followers, and get them to quote-post our launch with their own honest take. No bought engagement, no bots. Real people who actually post.",
+    "deliverables": [
+      "Links to all three quote-posts",
+      "Screenshot of each account's follower count (10k+)",
+      "Posts still live and public 48 hours after submission"
+    ],
+    "category": "social",
+    "status": "fresh"
+  },
+  {
+    "id": "2026-06-17-go-scraper",
+    "createdAt": "2026-06-17T21:10:00Z",
+    "title": "Build an open-source pump.fun GO scraper",
+    "reward": "$1,200",
+    "rewardUsd": 1200,
+    "deadline": "7 days",
+    "task": "A clean, public tool that pulls the live bounty board into structured JSON. Title, reward, deadline, link, per bounty. MIT licensed so anyone can use it. Make it something you would actually run yourself.",
+    "deliverables": [
+      "Public GitHub repo, MIT license, README with run instructions",
+      "Sample output: a JSON file of 50 current bounties",
+      "Two-minute screen recording of it running end to end"
+    ],
+    "category": "dev",
+    "status": "fresh"
+  },
+  {
+    "id": "2026-06-17-ten-second-meme",
+    "createdAt": "2026-06-17T19:25:00Z",
+    "title": "Make a ten-second meme that actually lands",
+    "reward": "$150",
+    "rewardUsd": 150,
+    "deadline": "5 days",
+    "task": "One short video, ten seconds or less, that makes people laugh and want to share. Original work, not a reupload. Bueno, if it is not funny, it does not count. Make me smile first.",
+    "deliverables": [
+      "The original video file",
+      "Link to it posted on X or TikTok",
+      "Timestamped screenshot showing 5,000+ views"
+    ],
+    "category": "meme",
+    "status": "fresh"
+  },
+  {
+    "id": "2026-06-17-card-system",
+    "createdAt": "2026-06-17T16:50:00Z",
+    "title": "Design a free bounty card UI kit",
+    "reward": "$250",
+    "rewardUsd": 250,
+    "deadline": "6 days",
+    "task": "A small, clean card system anyone can drop into a project. Four states: fresh, posted, claimed, expired. Give it away free so the whole board looks better, not just ours.",
+    "deliverables": [
+      "Public Figma file link with all four card states",
+      "Exported PNG previews of each state",
+      "A note granting free use (CC0 or similar)"
+    ],
+    "category": "design",
+    "status": "fresh"
+  },
+  {
+    "id": "2026-06-17-map-the-big-ones",
+    "createdAt": "2026-06-17T14:05:00Z",
+    "title": "Map every live GO bounty over $500",
+    "reward": "$80",
+    "rewardUsd": 80,
+    "deadline": "48 hours",
+    "task": "Go through the board and list every active bounty paying more than 500 dollars. Honest work, no guessing. If the reward is unclear, leave it out.",
+    "deliverables": [
+      "A spreadsheet with columns: title, reward, deadline, link",
+      "At least 20 rows, each with a working link",
+      "Timestamp showing when you pulled the data"
+    ],
+    "category": "research",
+    "status": "fresh"
+  },
+  {
+    "id": "2026-06-17-keepie-uppies",
+    "createdAt": "2026-06-17T11:30:00Z",
+    "title": "Fifty keepie-uppies, one unbroken take",
+    "reward": "$60",
+    "rewardUsd": 60,
+    "deadline": "4 days",
+    "task": "Film yourself doing fifty keepie-uppies without the ball touching the ground, one continuous shot, somewhere safe and legal. Daylight, count out loud or on screen. Dale, it is harder than it looks.",
+    "deliverables": [
+      "One unedited phone video, no cuts",
+      "The count clearly visible or audible through all fifty",
+      "Posted publicly with a caption, link included"
+    ],
+    "category": "irl",
+    "status": "fresh"
+  },
+  {
+    "id": "2026-06-17-translate-the-board",
+    "createdAt": "2026-06-17T08:15:00Z",
+    "title": "Translate the board into Spanish and Portuguese",
+    "reward": "$200",
+    "rewardUsd": 200,
+    "deadline": "5 days",
+    "task": "Take the current bounty board copy and translate it into natural Spanish and Brazilian Portuguese. Native quality, not machine. The kind a friend would write, not a manual.",
+    "deliverables": [
+      "Two text files: es and pt-BR",
+      "A side-by-side document, English next to each translation",
+      "Your name or handle so we can credit you"
+    ],
+    "category": "translation",
+    "status": "fresh"
+  },
+  {
+    "id": "2026-06-17-escrow-explainer",
+    "createdAt": "2026-06-17T05:00:00Z",
+    "title": "Explain GO escrow in 600 plain words",
+    "reward": "$120",
+    "rewardUsd": 120,
+    "deadline": "3 days",
+    "task": "Write 600 words a newcomer can actually follow on how pump.fun GO escrow works. How the reward is locked, how proof gets verified, who decides payout. Plain and honest, no hype.",
+    "deliverables": [
+      "Public Google Doc link, around 600 words",
+      "Every claim backed by a linked source",
+      "No filler, no marketing voice"
+    ],
+    "category": "content",
+    "status": "fresh"
+  }
+]
