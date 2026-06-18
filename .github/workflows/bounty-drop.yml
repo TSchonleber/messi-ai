@@ -1,0 +1,45 @@
+name: Leo bounty drop
+
+on:
+  schedule:
+    - cron: "0 */3 * * *" # every 3 hours
+  workflow_dispatch: # manual "Run workflow" button
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bounty-drop
+  cancel-in-progress: false
+
+jobs:
+  drop:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install -r agent/requirements.txt
+
+      - name: Leo generates bounties
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          LEO_MODEL: ${{ vars.LEO_MODEL || 'gpt-5.2' }}
+          BATCH: ${{ vars.BOUNTY_BATCH || '3' }}
+        run: python agent/bounty.py
+
+      - name: Commit new drops
+        run: |
+          git config user.name "Leo (bot)"
+          git config user.email "bot@messi-ai.fun"
+          if git diff --quiet -- public/bounties.json; then
+            echo "No new bounties this run."
+          else
+            git add public/bounties.json
+            git commit -m "Leo drop: fresh bounties ($(date -u +%Y-%m-%dT%H:%MZ))"
+            git push
+          fi

@@ -11,8 +11,20 @@ generate pump.fun GO bounties in his own voice, drop them on a schedule into a l
 **Bounties** feed on a polished version of the site, and make each one *post-ready* so
 the operator does the final fund + submit on pump.fun manually.
 
+## Status
+
+Built and live at messi-ai.fun (Vercel, auto-deploys from `main`). Site is now the
+bounty generator — the Leo chat companion was removed. Rewards are in **SOL** (0.5–5
+default, higher only when the operator specifies). Cron cadence: **every 3 hours**, 3
+drops/run. Generator: `agent/bounty.py` + `.github/workflows/bounty-drop.yml` (needs
+`OPENAI_API_KEY` in repo Actions secrets).
+
 ## Key decisions (locked)
 
+0. **Site pivot:** the site IS the bounty generator (no companion). Rewards in SOL.
+   Bounty quality bar enforced: each must ship a real asset, grow reach verifiably, or
+   be an on-brand stunt; reference something concrete; not be self-defeating; SOL scaled
+   to effort. Encoded in `agent/BOUNTY_SPEC.md`.
 1. **Leo generates, in-character.** Persona overrides the source spec's "feel like a
    different real person each time." Output format, anti-slop banned-word list, and
    safety constraints from the source spec carry over.
