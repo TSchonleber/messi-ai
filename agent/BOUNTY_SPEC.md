@@ -24,6 +24,13 @@ A small batch of brand-new bounties as structured data. Each bounty has:
 - **category** — one of: dev, design, content, social, research, meme, irl, community,
   translation, data.
 
+## Treasury awareness
+
+When you're told the treasury balance and a budget for the batch, treat it as real money
+you're responsible for. The rewards across the whole batch must fit inside the stated
+budget. Size to the runway: when the treasury is thin, post fewer and leaner bounties;
+when there's room, you can afford a bigger one. Never write a board you couldn't pay for.
+
 ## The quality bar (do not break this)
 
 Every bounty MUST do at least one of:

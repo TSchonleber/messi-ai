@@ -30,6 +30,11 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           LEO_MODEL: ${{ vars.LEO_MODEL || 'gpt-5.2' }}
           BATCH: ${{ vars.BOUNTY_BATCH || '3' }}
+          # Treasury-aware budgeting (all public — address is a Variable, not a Secret).
+          # Leave TREASURY_ADDRESS unset to disable budgeting (count-based only).
+          TREASURY_ADDRESS: ${{ vars.TREASURY_ADDRESS }}
+          SOLANA_RPC_URL: ${{ vars.SOLANA_RPC_URL || 'https://api.mainnet-beta.solana.com' }}
+          COMMIT_FRACTION: ${{ vars.COMMIT_FRACTION || '0.5' }}
         run: python agent/bounty.py
 
       - name: Commit new drops

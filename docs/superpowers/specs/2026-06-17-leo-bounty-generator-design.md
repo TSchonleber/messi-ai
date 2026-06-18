@@ -19,6 +19,13 @@ default, higher only when the operator specifies). Cron cadence: **every 3 hours
 drops/run. Generator: `agent/bounty.py` + `.github/workflows/bounty-drop.yml` (needs
 `OPENAI_API_KEY` in repo Actions secrets).
 
+**Treasury-aware budgeting:** if `TREASURY_ADDRESS` (a repo Variable, public) is set, the
+generator reads the treasury's SOL balance via public RPC (read-only — no private key) and
+sizes each run to a budget = `balance × COMMIT_FRACTION` (default 0.5) minus the reward
+already committed to open/unfunded bounties. Leo is told the balance + budget and sizes the
+batch in-character; code enforces the ceiling (per-bounty cap, run-total cap, skip-if-thin).
+Funding escrows remains a human step — the bot never holds a key, only reads a balance.
+
 ## Key decisions (locked)
 
 0. **Site pivot:** the site IS the bounty generator (no companion). Rewards in SOL.
