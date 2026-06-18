@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 .vercel
 .vercel
+
+# python
+__pycache__/
+*.pyc
