@@ -12,7 +12,7 @@ ceiling so the model can never propose more than the treasury can back.
 
 Env:
     OPENAI_API_KEY    required
-    LEO_MODEL         generation model (default: gpt-5.2)
+    LEO_MODEL         generation model (default: gpt-5.4)
     BATCH             max bounties to ask for per run (default: 3)
     FEED_PATH         path to the feed JSON (default: ../public/bounties.json)
     TREASURY_ADDRESS  Solana pubkey of the bounty treasury (optional; enables budgeting)
@@ -37,7 +37,7 @@ from openai import OpenAI
 
 HERE = Path(__file__).parent
 ROOT = HERE.parent
-MODEL = os.getenv("LEO_MODEL", "gpt-5.2")
+MODEL = os.getenv("LEO_MODEL") or "gpt-5.4"
 BATCH = int(os.getenv("BATCH", "3"))
 FEED = Path(os.getenv("FEED_PATH", str(ROOT / "public" / "bounties.json")))
 
@@ -207,11 +207,17 @@ def is_safe(b: dict) -> bool:
     resp = client().responses.create(
         model=MODEL,
         instructions=(
-            "You are a strict safety moderator for a public bounty board. Reject a bounty if "
-            "it involves anything illegal, violent, harassing, doxxing, self-harm, a dangerous "
-            "stunt (fire, heights, trespassing, driving, body modification), targets a real "
-            "named private individual, exploits a tragedy, is a scam/giveaway/impersonation, or "
-            "gives financial advice. When in doubt, reject."
+            "You are a safety moderator for a public bounty board on pump.fun GO, a Solana crypto "
+            "bounty marketplace. Crypto, memecoin, Solana, and pump.fun-related tasks are the norm "
+            "and are FINE — do not reject something just for mentioning or promoting the platform. "
+            "Reject a bounty ONLY if it clearly involves: anything illegal; violence, harassment, "
+            "doxxing, or self-harm; a physically dangerous stunt (fire, heights, trespassing, "
+            "driving, weapons, body modification); targeting or exposing a real named private "
+            "individual; exploiting a tragedy; a scam, rug, fake giveaway, or impersonation of a "
+            "real person or brand; or explicit financial/investment advice (telling people what to "
+            "buy or sell, price predictions, or promises of returns). Marketing, content, design, "
+            "dev, research, memes, translation, and explaining how the platform works are all fine. "
+            "Approve unless it clearly hits one of those."
         ),
         input=f"Bounty:\n{blob}",
         text={"format": {

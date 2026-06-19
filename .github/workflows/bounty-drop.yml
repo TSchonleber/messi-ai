@@ -28,7 +28,7 @@ jobs:
       - name: Leo generates bounties
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          LEO_MODEL: ${{ vars.LEO_MODEL || 'gpt-5.2' }}
+          LEO_MODEL: ${{ vars.LEO_MODEL || 'gpt-5.4' }}
           BATCH: ${{ vars.BOUNTY_BATCH || '3' }}
           # Treasury-aware budgeting (all public — address is a Variable, not a Secret).
           # Leave TREASURY_ADDRESS unset to disable budgeting (count-based only).
