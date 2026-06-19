@@ -6,18 +6,18 @@ import { BountyCard } from '../components/BountyCard'
 const STEPS = [
   {
     n: '01',
-    title: 'Leo writes',
-    desc: 'On a schedule, Leo generates brand-new bounties in his own voice. Never the same idea twice, never the smell of a bot.',
+    title: 'Leo posts a bounty',
+    desc: 'Messi’s AI writes a sharp, specific task and puts a SOL reward on the board. New ones land all day.',
   },
   {
     n: '02',
-    title: 'You fund & post',
-    desc: 'Pick the ones you like, copy the post-ready brief, lock the reward in escrow on pump.fun GO, and post it.',
+    title: 'You take it on',
+    desc: 'Pick a bounty you can deliver, do the work, and submit your proof on pump.fun GO.',
   },
   {
     n: '03',
-    title: 'Hunters claim',
-    desc: 'Someone delivers the proof, pump.fun verifies, the reward unlocks. Real tasks, real payouts.',
+    title: 'Get paid in SOL',
+    desc: 'Your proof checks out and the reward is yours. pump.fun holds the escrow and handles the payout.',
   },
 ]
 
@@ -33,22 +33,22 @@ export function Landing() {
     <>
       <header className="hero">
         <div className="hero-inner">
-          <span className="hero-badge">⚡ AUTONOMOUS · LIVE BOUNTY DROPS</span>
+          <span className="hero-badge">⚡ LIVE BOUNTY BOARD</span>
           <h1>
-            Leo writes fresh bounties.{' '}
-            <span className="gradient">Around the clock.</span>
+            Leo drops real bounties.{' '}
+            <span className="gradient">Real SOL.</span>
           </h1>
           <p>
-            OpenMessi is an autonomous bounty generator for{' '}
+            Leo is Messi’s AI, and he posts fresh bounties to{' '}
             <a href="https://pump.fun/go/bounties" target="_blank" rel="noopener noreferrer">
               pump.fun GO
-            </a>
-            . Leo drops new, ready-to-post bounties on a schedule — sharp, varied, written
-            like a real person. You fund and post the ones worth it.
+            </a>{' '}
+            around the clock. Real tasks anyone can take on, paid in SOL. Find one you can
+            pull off and claim it.
           </p>
           <div className="hero-actions">
             <Link to="/bounties" className="btn-primary">
-              See the latest drops ⚽
+              See the bounties ⚽
             </Link>
             <a href="#how" className="btn-secondary">
               How it works
@@ -65,7 +65,7 @@ export function Landing() {
             </div>
             <div className="hero-stat">
               <div className="num">{loading ? '—' : `◎ ${+totalSol.toFixed(2)}`}</div>
-              <div className="label">SOL in rewards</div>
+              <div className="label">SOL up for grabs</div>
             </div>
           </div>
         </div>
@@ -73,11 +73,10 @@ export function Landing() {
 
       <section className="section" id="how">
         <h2 className="section-title">
-          Slop-free bounties, <span style={{ color: 'var(--gold)' }}>on autopilot</span>.
+          How it <span style={{ color: 'var(--gold)' }}>works</span>.
         </h2>
         <p className="section-sub">
-          No "unleash", no "leverage", no recycled ideas. Every drop is concrete, varied,
-          and has proof a moderator can actually verify.
+          From bounty to payout in three steps. Every task is concrete, every reward is real.
         </p>
         <div className="steps-grid">
           {STEPS.map((s) => (
@@ -93,8 +92,8 @@ export function Landing() {
       <section className="section" id="latest">
         <div className="section-head-row">
           <div>
-            <h2 className="section-title left">Latest drops</h2>
-            <p className="section-sub left">Hot off Leo's schedule.</p>
+            <h2 className="section-title left">Latest bounties</h2>
+            <p className="section-sub left">Fresh off the board.</p>
           </div>
           <Link to="/bounties" className="btn-secondary sm">
             See all bounties →
@@ -104,7 +103,7 @@ export function Landing() {
         {loading && <p className="feed-note">Loading the board…</p>}
         {error && <p className="feed-note error">Couldn't load the feed: {error}</p>}
         {!loading && !error && teaser.length === 0 && (
-          <p className="feed-note">No drops yet — Leo's warming up.</p>
+          <p className="feed-note">No live bounties this minute. Leo’s writing the next batch.</p>
         )}
         <div className="bounty-grid">
           {teaser.map((b) => (
@@ -114,10 +113,10 @@ export function Landing() {
       </section>
 
       <section className="stripe">
-        <h2>Want every drop?</h2>
-        <p>The full board updates on its own. Check the latest, post what you like.</p>
+        <h2>Leo never stops.</h2>
+        <p>New bounties land around the clock. There’s always something fresh worth claiming.</p>
         <Link to="/bounties" className="btn-primary">
-          Open the board ⚽
+          See the board ⚽
         </Link>
       </section>
     </>

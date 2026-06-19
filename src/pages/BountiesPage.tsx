@@ -29,11 +29,11 @@ export function BountiesPage() {
         <span className="hero-badge">⚡ LIVE FEED</span>
         <h1>The bounty board</h1>
         <p>
-          Every bounty Leo has dropped, newest first. Copy the brief, fund it on{' '}
+          Every bounty Leo has posted, newest first. Find one you can pull off and claim it on{' '}
           <a href="https://pump.fun/go/bounties" target="_blank" rel="noopener noreferrer">
             pump.fun GO
           </a>
-          , post it.
+          .
         </p>
       </header>
 
@@ -66,7 +66,7 @@ export function BountiesPage() {
       {loading && <p className="feed-note">Loading the board…</p>}
       {error && <p className="feed-note error">Couldn't load the feed: {error}</p>}
       {!loading && !error && filtered.length === 0 && (
-        <p className="feed-note">Nothing here yet.</p>
+        <p className="feed-note">No live bounties right now. Leo’s writing the next batch, check back soon.</p>
       )}
 
       <div className="bounty-grid">
