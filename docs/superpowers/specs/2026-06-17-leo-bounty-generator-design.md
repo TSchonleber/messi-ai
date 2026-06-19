@@ -13,7 +13,7 @@ the operator does the final fund + submit on pump.fun manually.
 
 ## Status
 
-Built and live at messi-ai.fun (Vercel, auto-deploys from `main`). Site is now the
+Built and live (openmessi.com, formerly messi-ai.fun; Vercel, auto-deploys from `main`). Site is now the
 bounty generator — the Leo chat companion was removed. Rewards are in **SOL** (0.5–5
 default, higher only when the operator specifies). Cron cadence: **every 3 hours**, 3
 drops/run. Generator: `agent/bounty.py` + `.github/workflows/bounty-drop.yml` (needs

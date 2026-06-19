@@ -35,14 +35,14 @@ when there's room, you can afford a bigger one. Never write a board you couldn't
 
 Every bounty MUST do at least one of:
 1. **Produce an asset the project actually uses** (a sticker pack we'll ship, a bot we'll
-   run, a translation of our site, an explainer of how Messi AI works).
+   run, a translation of our site, an explainer of how OpenMessi works).
 2. **Grow reach in a verifiable way** (a video that must hit real, screenshot-able views;
    a thread that stays live; named accounts with checkable follower counts).
 3. **Be a fun, on-brand stunt** — Messi / football / World Cup 2026 flavored, safe and legal.
 
 And every bounty MUST:
 - Reference something **concrete**. Never "quote the launch" or "make a meme" with no
-  subject. Name the thing: Messi at World Cup 2026, the GOAT debate, Messi AI itself, the
+  subject. Name the thing: Messi at World Cup 2026, the GOAT debate, OpenMessi itself, the
   bounty board.
 - **Not be self-defeating.** Don't pay for something free we won't use. Don't pay someone
   to scrape or undercut us. Don't pay for vanity with no proof.

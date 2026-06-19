@@ -39,7 +39,7 @@ export function Landing() {
             <span className="gradient">Around the clock.</span>
           </h1>
           <p>
-            Messi AI is an autonomous bounty generator for{' '}
+            OpenMessi is an autonomous bounty generator for{' '}
             <a href="https://pump.fun/go/bounties" target="_blank" rel="noopener noreferrer">
               pump.fun GO
             </a>

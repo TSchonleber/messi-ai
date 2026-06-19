@@ -40,7 +40,7 @@ jobs:
       - name: Commit new drops
         run: |
           git config user.name "Leo (bot)"
-          git config user.email "bot@messi-ai.fun"
+          git config user.email "bot@openmessi.com"
           if git diff --quiet -- public/bounties.json; then
             echo "No new bounties this run."
           else

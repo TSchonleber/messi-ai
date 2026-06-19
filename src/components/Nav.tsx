@@ -17,7 +17,7 @@ export function Nav() {
       <Link to="/" className="nav-logo">
         <span className="ball">⚽</span>
         <span>
-          Messi<span className="ai">AI</span>
+          Open<span className="ai">Messi</span>
         </span>
       </Link>
       <div className="nav-links">
