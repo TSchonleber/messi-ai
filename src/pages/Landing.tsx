@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { useBounties } from '../hooks/useBounties'
 import { isFresh } from '../lib/bounties'
 import { BountyCard } from '../components/BountyCard'
+import { Reveal } from '../components/Reveal'
+import { useCountUp } from '../hooks/useCountUp'
 
 const STEPS = [
   {
@@ -28,6 +30,10 @@ export function Landing() {
   const freshCount = all.filter((b) => isFresh(b.createdAt)).length
   const totalSol = all.reduce((s, b) => s + (b.rewardSol || 0), 0)
   const teaser = all.slice(0, 3)
+
+  const cBounties = useCountUp(all.length, 1000, !loading)
+  const cFresh = useCountUp(freshCount, 1000, !loading)
+  const cSol = useCountUp(totalSol, 1200, !loading)
 
   return (
     <>
@@ -56,15 +62,15 @@ export function Landing() {
           </div>
           <div className="hero-stats">
             <div className="hero-stat">
-              <div className="num">{loading ? '—' : all.length}</div>
+              <div className="num">{loading ? '—' : Math.round(cBounties)}</div>
               <div className="label">bounties dropped</div>
             </div>
             <div className="hero-stat">
-              <div className="num">{loading ? '—' : freshCount}</div>
+              <div className="num">{loading ? '—' : Math.round(cFresh)}</div>
               <div className="label">fresh today</div>
             </div>
             <div className="hero-stat">
-              <div className="num">{loading ? '—' : `◎ ${+totalSol.toFixed(2)}`}</div>
+              <div className="num">{loading ? '—' : `◎ ${cSol.toFixed(2)}`}</div>
               <div className="label">SOL up for grabs</div>
             </div>
           </div>
@@ -79,12 +85,14 @@ export function Landing() {
           From bounty to payout in three steps. Every task is concrete, every reward is real.
         </p>
         <div className="steps-grid">
-          {STEPS.map((s) => (
-            <div key={s.n} className="step-card">
-              <div className="step-n">{s.n}</div>
-              <h3>{s.title}</h3>
-              <p>{s.desc}</p>
-            </div>
+          {STEPS.map((s, i) => (
+            <Reveal key={s.n} className="reveal-cell" delay={i * 110}>
+              <div className="step-card">
+                <div className="step-n">{s.n}</div>
+                <h3>{s.title}</h3>
+                <p>{s.desc}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
       </section>
@@ -106,18 +114,22 @@ export function Landing() {
           <p className="feed-note">No live bounties this minute. Leo’s writing the next batch.</p>
         )}
         <div className="bounty-grid">
-          {teaser.map((b) => (
-            <BountyCard key={b.id} bounty={b} />
+          {teaser.map((b, i) => (
+            <Reveal key={b.id} className="reveal-cell" delay={i * 110}>
+              <BountyCard bounty={b} />
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section className="stripe">
-        <h2>Leo never stops.</h2>
-        <p>New bounties land around the clock. There’s always something fresh worth claiming.</p>
-        <Link to="/bounties" className="btn-primary">
-          See the board ⚽
-        </Link>
+        <Reveal>
+          <h2>Leo never stops.</h2>
+          <p>New bounties land around the clock. There’s always something fresh worth claiming.</p>
+          <Link to="/bounties" className="btn-primary">
+            See the board ⚽
+          </Link>
+        </Reveal>
       </section>
     </>
   )

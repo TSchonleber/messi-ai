@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type MouseEvent } from 'react'
 import type { Bounty } from '../types'
 import {
   CATEGORY_LABEL,
@@ -6,10 +6,13 @@ import {
   postToBounty,
   timeAgo,
   isFresh,
+  deadlineExpiry,
 } from '../lib/bounties'
+import { useCountdown } from '../hooks/useCountdown'
 
 export function BountyCard({ bounty }: { bounty: Bounty }) {
   const [copied, setCopied] = useState(false)
+  const countdown = useCountdown(deadlineExpiry(bounty.deadline, bounty.createdAt))
 
   const copy = async () => {
     try {
@@ -21,12 +24,19 @@ export function BountyCard({ bounty }: { bounty: Bounty }) {
     }
   }
 
+  // cursor-tracking glow
+  const onMove = (e: MouseEvent<HTMLElement>) => {
+    const r = e.currentTarget.getBoundingClientRect()
+    e.currentTarget.style.setProperty('--mx', `${((e.clientX - r.left) / r.width) * 100}%`)
+    e.currentTarget.style.setProperty('--my', `${((e.clientY - r.top) / r.height) * 100}%`)
+  }
+
+  const ended = countdown === 'ended'
+
   return (
-    <article className="bounty-card">
+    <article className="bounty-card" onMouseMove={onMove}>
       <div className="bounty-top">
-        <span className={`cat cat-${bounty.category}`}>
-          {CATEGORY_LABEL[bounty.category]}
-        </span>
+        <span className={`cat cat-${bounty.category}`}>{CATEGORY_LABEL[bounty.category]}</span>
         {isFresh(bounty.createdAt) && <span className="fresh-dot">● fresh drop</span>}
         <span className="reward">{bounty.reward}</span>
       </div>
@@ -34,7 +44,13 @@ export function BountyCard({ bounty }: { bounty: Bounty }) {
       <h3 className="bounty-title">{bounty.title}</h3>
 
       <div className="bounty-meta">
-        <span>⏳ {bounty.deadline}</span>
+        {countdown ? (
+          <span className={`countdown ${ended ? 'ended' : ''}`}>
+            {ended ? '⛔ ended' : `⏳ ${countdown} left`}
+          </span>
+        ) : (
+          <span>⏳ {bounty.deadline}</span>
+        )}
         <span>·</span>
         <span>dropped {timeAgo(bounty.createdAt)}</span>
       </div>

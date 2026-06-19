@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useBounties } from '../hooks/useBounties'
 import { BountyCard } from '../components/BountyCard'
+import { Reveal } from '../components/Reveal'
 import { CATEGORY_LABEL } from '../lib/bounties'
 import type { BountyCategory } from '../types'
 
@@ -69,11 +70,13 @@ export function BountiesPage() {
         <p className="feed-note">No live bounties right now. Leo’s writing the next batch, check back soon.</p>
       )}
 
-      <div className="bounty-grid">
-        {visible.map((b) => (
-          <BountyCard key={b.id} bounty={b} />
-        ))}
-      </div>
+      <Reveal>
+        <div className="bounty-grid">
+          {visible.map((b) => (
+            <BountyCard key={b.id} bounty={b} />
+          ))}
+        </div>
+      </Reveal>
 
       {visible.length < filtered.length && (
         <div className="load-more-row">

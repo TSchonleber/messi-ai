@@ -67,3 +67,21 @@ export function timeAgo(iso: string): string {
 export function isFresh(iso: string): boolean {
   return Date.now() - +new Date(iso) < 24 * 60 * 60 * 1000
 }
+
+const UNIT_MS: Record<string, number> = {
+  min: 60_000,
+  minute: 60_000,
+  hr: 3_600_000,
+  hour: 3_600_000,
+  day: 86_400_000,
+  week: 604_800_000,
+}
+
+/** Best-effort absolute expiry from a relative deadline string ("72 hours", "5 days"). */
+export function deadlineExpiry(deadline: string, createdAt: string): number | null {
+  const m = deadline.match(/(\d+(?:\.\d+)?)\s*(min|minute|hour|hr|day|week)s?/i)
+  if (!m) return null
+  const unit = UNIT_MS[m[2].toLowerCase()]
+  if (!unit) return null
+  return +new Date(createdAt) + parseFloat(m[1]) * unit
+}
