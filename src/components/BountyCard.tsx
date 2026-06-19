@@ -1,4 +1,4 @@
-import { useState, type MouseEvent } from 'react'
+import { useState } from 'react'
 import type { Bounty } from '../types'
 import {
   CATEGORY_LABEL,
@@ -24,26 +24,22 @@ export function BountyCard({ bounty }: { bounty: Bounty }) {
     }
   }
 
-  // cursor-tracking glow
-  const onMove = (e: MouseEvent<HTMLElement>) => {
-    const r = e.currentTarget.getBoundingClientRect()
-    e.currentTarget.style.setProperty('--mx', `${((e.clientX - r.left) / r.width) * 100}%`)
-    e.currentTarget.style.setProperty('--my', `${((e.clientY - r.top) / r.height) * 100}%`)
-  }
-
   const ended = countdown === 'ended'
 
   return (
-    <article className="bounty-card" onMouseMove={onMove}>
-      <div className="bounty-top">
-        <span className={`cat cat-${bounty.category}`}>{CATEGORY_LABEL[bounty.category]}</span>
-        {isFresh(bounty.createdAt) && <span className="fresh-dot">● fresh drop</span>}
-        <span className="reward">{bounty.reward}</span>
+    <article className="card">
+      <div className="card-top">
+        <span className={`tag t-${bounty.category}`}>{CATEGORY_LABEL[bounty.category]}</span>
+        {isFresh(bounty.createdAt) && <span className="fresh-dot">● fresh</span>}
+        <span className="reward">
+          {bounty.rewardSol}
+          <span className="unit"> SOL</span>
+        </span>
       </div>
 
-      <h3 className="bounty-title">{bounty.title}</h3>
+      <h3 className="card-title">{bounty.title}</h3>
 
-      <div className="bounty-meta">
+      <div className="card-meta">
         {countdown ? (
           <span className={`countdown ${ended ? 'ended' : ''}`}>
             {ended ? '⛔ ended' : `⏳ ${countdown} left`}
@@ -55,9 +51,9 @@ export function BountyCard({ bounty }: { bounty: Bounty }) {
         <span>dropped {timeAgo(bounty.createdAt)}</span>
       </div>
 
-      <p className="bounty-task">{bounty.task}</p>
+      <p className="card-task">{bounty.task}</p>
 
-      <div className="bounty-proof">
+      <div className="card-proof">
         <span className="proof-label">Proof</span>
         <ul>
           {bounty.deliverables.map((d, i) => (
@@ -66,11 +62,11 @@ export function BountyCard({ bounty }: { bounty: Bounty }) {
         </ul>
       </div>
 
-      <div className="bounty-actions">
-        <button className="btn-ghost" onClick={copy}>
+      <div className="card-actions">
+        <button className="btn sm ghost" onClick={copy}>
           {copied ? 'Copied ✓' : 'Copy'}
         </button>
-        <button className="btn-primary sm" onClick={() => void postToBounty(bounty)}>
+        <button className="btn sm" onClick={() => void postToBounty(bounty)}>
           Open in pump.fun GO ↗
         </button>
       </div>

@@ -1,14 +1,15 @@
 :root {
-  --sky: #6cace4;
-  --sky-light: #9cc8f0;
-  --sky-dark: #3a7bbf;
-  --gold: #f5c518;
-  --gold-soft: #ffe27a;
-  --navy: #0b1d33;
-  --navy-2: #102a47;
-  --white: #f7fafd;
-  --text-muted: #9db4cc;
-  font-family: 'Inter', system-ui, sans-serif;
+  --paper: #f2efe6;
+  --paper-2: #fbfaf5;
+  --ink: #0c0f14;
+  --ink-2: #161b23;
+  --sky: #3f98e6;
+  --sky-deep: #1f6fbf;
+  --sky-soft: #cfe6ff;
+  --gold: #f2b705;
+  --muted: #5b6470;
+  --line: rgba(12, 15, 20, 0.16);
+  font-family: 'Archivo', system-ui, sans-serif;
 }
 
 * {
@@ -22,15 +23,21 @@ html {
 }
 
 body {
-  background: var(--navy);
-  color: var(--white);
+  background: var(--paper);
+  color: var(--ink);
   min-height: 100vh;
-  line-height: 1.6;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
-  font-family: 'Sora', sans-serif;
-  line-height: 1.15;
+h1,
+h2,
+h3 {
+  font-family: 'Anton', sans-serif;
+  font-weight: 400;
+  line-height: 0.9;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
 }
 
 a {
@@ -41,4 +48,9 @@ a {
 button {
   font-family: inherit;
   cursor: pointer;
+}
+
+::selection {
+  background: var(--sky);
+  color: #fff;
 }

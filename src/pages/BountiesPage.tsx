@@ -27,7 +27,7 @@ export function BountiesPage() {
   return (
     <div className="board">
       <header className="board-head">
-        <span className="hero-badge">⚡ LIVE FEED</span>
+        <span className="sec-tag">⚡ Live feed</span>
         <h1>The bounty board</h1>
         <p>
           Every bounty Leo has posted, newest first. Find one you can pull off and claim it on{' '}

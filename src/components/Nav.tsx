@@ -14,20 +14,20 @@ export function Nav() {
 
   return (
     <nav className="nav">
-      <Link to="/" className="nav-logo">
+      <Link to="/" className="wordmark">
         <span className="ball">⚽</span>
-        <span>
-          Open<span className="ai">Messi</span>
-        </span>
+        Open<span>Messi</span>
       </Link>
       <div className="nav-links">
-        <button className="linklike" onClick={goHow}>
+        <button className="navlink" onClick={goHow}>
           How it works
         </button>
-        <Link to="/bounties">Bounties</Link>
+        <Link to="/bounties" className="navlink">
+          Bounties
+        </Link>
       </div>
       <Link to="/bounties" className="nav-cta">
-        See the drops
+        See the board
       </Link>
     </nav>
   )
