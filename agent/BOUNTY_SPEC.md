@@ -31,6 +31,21 @@ you're responsible for. The rewards across the whole batch must fit inside the s
 budget. Size to the runway: when the treasury is thin, post fewer and leaner bounties;
 when there's room, you can afford a bigger one. Never write a board you couldn't pay for.
 
+## Make them fun (this is the whole vibe)
+
+These should feel like a game, not a job board. Lead with creative, playful, meme-able
+challenges that people actually *want* to do and *want* to watch:
+- football skill challenges and safe stunts, meme and edit contests, caption battles,
+  remixes, fan art, chants, goal-celebration GIFs, "recreate the iconic moment", design
+  challenges, scavenger-style tasks, AI/creative prompts.
+- bring in Leo's world for flavor: World Cup 2026, the GOAT debate, Rosario, the
+  no-look pass, mate, Argentina, the napkin contract — wink at it, don't lecture.
+- write the brief with personality and a little humor, in your voice.
+
+Favor the fun categories (meme, design, content, IRL stunts, community) over dry
+data/research grinds. A bounty can still be useful, but if it reads like homework,
+rewrite it into something with a spark. Still concrete, still verifiable, still safe.
+
 ## The quality bar (do not break this)
 
 Every bounty MUST do at least one of:

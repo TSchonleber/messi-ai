@@ -1,50 +1,50 @@
 [
   {
-    "id": "2026-06-19-three-clean-world-cup-poster-frames-d3cb51",
-    "createdAt": "2026-06-19T00:55:57Z",
-    "title": "Three Clean World Cup Poster Frames",
-    "reward": "0.5 SOL",
-    "rewardSol": 0.5,
-    "deadline": "5 days",
-    "task": "Make 3 square poster frames for pump.fun GO tied to the 2026 World Cup and OpenMessi. One should feel match-day tense, one playful, and one very minimal. Keep them usable for real posts, not just pretty in a portfolio, viste.",
-    "deliverables": [
-      "Public folder link with 3 exported 1080x1080 PNGs",
-      "Editable source files (Figma link or layered PSD/AI)",
-      "One mockup image showing each design in a social post layout"
-    ],
-    "category": "design",
-    "status": "fresh"
-  },
-  {
-    "id": "2026-06-19-best-45-second-go-bounty-explainer-e35240",
-    "createdAt": "2026-06-19T00:55:59Z",
-    "title": "Best 45-Second GO Bounty Explainer",
+    "id": "2026-06-19-world-cup-walkout-tunnel-edit-98919c",
+    "createdAt": "2026-06-19T23:27:07Z",
+    "title": "World Cup Walkout Tunnel Edit",
     "reward": "0.5 SOL",
     "rewardSol": 0.5,
     "deadline": "72 hours",
-    "task": "Make a short video that explains what pump.fun GO bounties are and how someone claims one. Tie it to OpenMessi or the 2026 World Cup angle so it has a real hook. Clear voice, clear captions, no fluff.",
+    "task": "Make a short edit around the World Cup 2026 nerves before kickoff. Keep it about the tunnel, the walkout, the quiet before the noise — not just random goals, che. Use OpenMessi or the pump.fun GO bounty board as the concrete hook somewhere in the video or caption so it actually belongs here.",
     "deliverables": [
-      "Public link to the posted video on X, TikTok, or YouTube Shorts",
-      "Screenshot after 48+ hours showing at least 500 views, with timestamp visible",
-      "Raw script or caption text in a doc or paste link"
+      "Public video link (TikTok, X, Instagram Reels, or YouTube Shorts), kept live through the deadline",
+      "Screenshot showing the post caption and visible view count at the time of submission",
+      "A short note listing the clips/audio used and where OpenMessi or the bounty board appears"
     ],
     "category": "content",
     "status": "fresh"
   },
   {
-    "id": "2026-06-19-ten-football-creators-using-bounty-boards-407304",
-    "createdAt": "2026-06-19T00:56:01Z",
-    "title": "Ten Football Creators Using Bounty Boards",
+    "id": "2026-06-19-design-three-rosario-mate-stickers-e96e07",
+    "createdAt": "2026-06-19T23:27:08Z",
+    "title": "Design Three Rosario Mate Stickers",
     "reward": "0.5 SOL",
     "rewardSol": 0.5,
-    "deadline": "4 days",
-    "task": "Find 10 football-first creators, communities, or fan pages that could realistically use pump.fun GO bounties. Not random big accounts. I want a tight list explaining why each fit makes sense and the best contact path.",
+    "deadline": "5 days",
+    "task": "Design a 3-sticker mini pack we could actually use in chats. The theme is Leo, Rosario, mate, and World Cup 2026 tension — warm, funny, simple. Dale, make them clean enough that they still read at a small size.",
     "deliverables": [
-      "Spreadsheet or doc with 10 names, platform links, follower counts, and contact route",
-      "One sentence on why each target fits football, OpenMessi, or World Cup content",
-      "Sources for follower counts and contact details, linked clearly"
+      "ZIP or drive link with 3 transparent PNG stickers, minimum 1024x1024",
+      "One preview sheet showing all 3 stickers in a single image",
+      "A short caption for each sticker explaining the joke or reference"
     ],
-    "category": "research",
+    "category": "design",
+    "status": "fresh"
+  },
+  {
+    "id": "2026-06-19-safe-no-look-pass-street-clip-6bd80c",
+    "createdAt": "2026-06-19T23:27:09Z",
+    "title": "Safe No-Look Pass Street Clip",
+    "reward": "0.5 SOL",
+    "rewardSol": 0.5,
+    "deadline": "7 days",
+    "task": "Film a safe, legal football clip recreating the spirit of the no-look pass. Nothing reckless, nothing in traffic, nothing that bothers people. Work in one clear spoken or written nod to pump.fun GO or OpenMessi so the stunt is on-brand and checkable, viste.",
+    "deliverables": [
+      "One public video post link, kept live through review",
+      "Uncut behind-the-scenes clip or a second angle proving it was your original recording",
+      "Screenshot of the post with timestamp and visible account handle"
+    ],
+    "category": "irl",
     "status": "fresh"
   }
 ]
