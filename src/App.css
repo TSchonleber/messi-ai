@@ -42,11 +42,15 @@
   font-size: 0.78rem;
 }
 
-/* ---------- Nav ---------- */
-.nav {
+/* ---------- Top bar (nav + contract) ---------- */
+.topbar {
   position: sticky;
   top: 0;
   z-index: 50;
+}
+
+/* ---------- Nav ---------- */
+.nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -105,6 +109,65 @@
   transform: translateY(-2px);
   background: var(--gold);
   color: var(--ink);
+}
+
+/* ---------- Contract address bar ---------- */
+.ca-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  background: var(--sky);
+  color: var(--ink);
+  border-bottom: 3px solid var(--ink);
+  padding: 0.5rem 5vw;
+}
+.ca-label {
+  font-family: 'Anton', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.95rem;
+}
+.ca-addr {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  background: rgba(12, 15, 20, 0.14);
+  padding: 0.22rem 0.6rem;
+  border-radius: 3px;
+  max-width: min(58vw, 520px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.ca-copy {
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  padding: 0.3rem 0.75rem;
+  border-radius: 3px;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  transition: background 0.15s ease, transform 0.12s ease;
+}
+.ca-copy:hover {
+  background: var(--sky-deep);
+  transform: translateY(-1px);
+}
+.ca-link {
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid var(--ink);
+}
+.ca-soon {
+  font-weight: 700;
+  font-style: italic;
+  opacity: 0.85;
 }
 
 /* ---------- Hero ---------- */
