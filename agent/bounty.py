@@ -201,6 +201,35 @@ def generate(feed: list, count: int, budget: float | None, balance: float | None
     return data.get("bounties", [])
 
 
+def polish(bounties: list) -> list:
+    """Proofread pass: fix spelling/grammar/clumsy phrasing without changing meaning."""
+    if not bounties:
+        return bounties
+    try:
+        resp = client().responses.create(
+            model=MODEL,
+            instructions=(
+                "You are a sharp copy editor. Fix spelling, grammar, and clumsy phrasing in each "
+                "bounty. Preserve the meaning, the quiet warm slightly-Argentine voice, the "
+                "category, the rewardSol number, and keep exactly the deliverables given (just "
+                "cleaned up). Do not invent new tasks or change rewards. Return the bounties, "
+                "corrected."
+            ),
+            input=json.dumps({"bounties": bounties}),
+            text={"format": {
+                "type": "json_schema",
+                "name": "bounty_batch",
+                "strict": True,
+                "schema": BOUNTY_SCHEMA,
+            }},
+        )
+        cleaned = json.loads(resp.output_text).get("bounties", [])
+        return cleaned if len(cleaned) == len(bounties) else bounties
+    except Exception as e:  # noqa: BLE001 — proofreading is best-effort
+        print(f"polish skipped: {e}", file=sys.stderr)
+        return bounties
+
+
 def is_safe(b: dict) -> bool:
     """Second-pass safety check — distinct from anti-slop. Default to reject on doubt."""
     blob = f"{b['title']}\n{b['task']}\n" + "\n".join(b.get("deliverables", []))
@@ -316,6 +345,8 @@ def main() -> int:
     except Exception as e:  # noqa: BLE001
         print(f"generation failed: {e}", file=sys.stderr)
         return 1
+
+    raw = polish(raw)
 
     fresh = []
     spent = 0.0
