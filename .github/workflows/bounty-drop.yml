@@ -1,9 +1,8 @@
 name: Leo bounty drop
 
 on:
-  schedule:
-    - cron: "11 * * * *" # every hour at :11 (UTC)
-  workflow_dispatch: # manual "Run workflow" button
+  # Autonomous schedule removed — project paused. Manual trigger only.
+  workflow_dispatch:
 
 permissions:
   contents: write
