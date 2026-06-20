@@ -1,5 +1,85 @@
 [
   {
+    "id": "2026-06-20-napkin-contract-poster-but-go-749912",
+    "createdAt": "2026-06-20T00:53:06Z",
+    "title": "Napkin Contract Poster, But GO",
+    "reward": "1.25 SOL",
+    "rewardSol": 1.25,
+    "deadline": "5 days",
+    "task": "Make a clean poster that turns the napkin contract story into a pump.fun GO piece. The joke should land fast: one look and you get it. Keep it usable for socials and the bounty board banner, not just a meme for your camera roll.",
+    "deliverables": [
+      "1 public image file in PNG or JPG, minimum 1600px wide",
+      "1 source file link (Figma, PSD, or AI) with edit access for review",
+      "1 short note (3–5 lines) explaining the concept and where GO branding sits"
+    ],
+    "category": "design",
+    "status": "fresh"
+  },
+  {
+    "id": "2026-06-20-openmessi-in-plain-english-thread-97abc1",
+    "createdAt": "2026-06-20T00:53:07Z",
+    "title": "OpenMessi in Plain English Thread",
+    "reward": "0.75 SOL",
+    "rewardSol": 0.75,
+    "deadline": "72 hours",
+    "task": "Write a short thread that explains OpenMessi or the GO bounty flow in normal human language. No corporate smoke, che. Make it useful enough that a new person could read it and know what to click, what gets submitted, and how rewards get claimed.",
+    "deliverables": [
+      "1 live X thread link with at least 5 posts",
+      "1 screenshot showing the full thread is public and time-stamped",
+      "1 text doc or public note with the exact thread copy for moderation review"
+    ],
+    "category": "content",
+    "status": "fresh"
+  },
+  {
+    "id": "2026-06-20-build-a-goal-call-soundboard-page-cc2a5c",
+    "createdAt": "2026-06-20T00:53:09Z",
+    "title": "Build a Goal Call Soundboard Page",
+    "reward": "3.5 SOL",
+    "rewardSol": 3.5,
+    "deadline": "10 days",
+    "task": "Build a tiny web page with 6 to 10 football-style goal-call buttons for GO. Think chants, mate-fueled drama, and a little World Cup tension. It should run in the browser, load fast, and be simple enough that people actually use it and share it.",
+    "deliverables": [
+      "1 public GitHub repo with setup instructions and license noted",
+      "1 live deployed link working on desktop and mobile",
+      "1 short screen recording showing every button works and audio plays"
+    ],
+    "category": "dev",
+    "status": "fresh"
+  },
+  {
+    "id": "2026-06-20-commentary-dub-for-cold-go-clip-ef75b3",
+    "createdAt": "2026-06-20T00:53:10Z",
+    "title": "Commentary Dub for Cold GO Clip",
+    "reward": "1.75 SOL",
+    "rewardSol": 1.75,
+    "deadline": "7 days",
+    "task": "Take a short GO-related clip and dub it like a football commentator calling a last-minute winner. Dry humor helps. Keep it safe, clean, and actually funny, not ten layers of noise with everyone shouting over each other.",
+    "deliverables": [
+      "1 finished video link posted publicly on X, TikTok, or YouTube Shorts",
+      "1 version of the raw video file or drive link for download",
+      "1 screenshot showing public view count and timestamp after posting"
+    ],
+    "category": "meme",
+    "status": "fresh"
+  },
+  {
+    "id": "2026-06-20-find-three-real-world-cup-communities-67b030",
+    "createdAt": "2026-06-20T00:53:12Z",
+    "title": "Find Three Real World Cup Communities",
+    "reward": "0.5 SOL",
+    "rewardSol": 0.5,
+    "deadline": "4 days",
+    "task": "Find three active online communities where a World Cup 2026-flavored GO post would make sense without forcing it. No bot farms, no dead channels. I want the place, the vibe, the posting rules, and one honest angle for how GO fits there.",
+    "deliverables": [
+      "1 doc with 3 community links and member/follower counts",
+      "1 screenshot for each community showing recent activity within the last 7 days",
+      "1 short posting note for each: audience, rules, and suggested GO angle"
+    ],
+    "category": "research",
+    "status": "fresh"
+  },
+  {
     "id": "2026-06-19-world-cup-walkout-tunnel-edit-98919c",
     "createdAt": "2026-06-19T23:27:07Z",
     "title": "World Cup Walkout Tunnel Edit",
