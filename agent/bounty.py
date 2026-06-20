@@ -45,7 +45,7 @@ TREASURY_ADDRESS = os.getenv("TREASURY_ADDRESS", "").strip()
 SOLANA_RPC_URL = os.getenv("SOLANA_RPC_URL") or "https://api.mainnet-beta.solana.com"
 COMMIT_FRACTION = float(os.getenv("COMMIT_FRACTION") or "0.5")
 
-MAX_FEED = 100          # keep the feed file from growing forever
+MAX_FEED = 20           # backstop cap; the board is pruned by deadline, not count
 READBACK = 25           # how many recent drops to show the model (anti-repeat)
 SOL_MIN, SOL_MAX = 0.5, 5.0
 
@@ -147,6 +147,23 @@ def open_value(feed: list) -> float:
     return sum(float(b.get("rewardSol", 0)) for b in feed if b.get("status") == "fresh")
 
 
+_UNIT_S = {"min": 60, "minute": 60, "hr": 3600, "hour": 3600, "day": 86400, "week": 604800}
+
+
+def is_live(b: dict) -> bool:
+    """Keep a bounty until its deadline passes (unparseable deadlines are kept)."""
+    m = re.search(r"(\d+(?:\.\d+)?)\s*(min|minute|hour|hr|day|week)s?", b.get("deadline", ""), re.I)
+    created = b.get("createdAt", "")
+    if not m or not created:
+        return True
+    try:
+        base = datetime.fromisoformat(created.replace("Z", "+00:00")).timestamp()
+    except ValueError:
+        return True
+    expiry = base + float(m.group(1)) * _UNIT_S[m.group(2).lower()]
+    return expiry > datetime.now(timezone.utc).timestamp()
+
+
 def slug(title: str) -> str:
     s = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")
     return s[:48] or "bounty"
@@ -169,22 +186,21 @@ def has_banned(text: str) -> str | None:
 
 # ── generation ───────────────────────────────────────────────────────────────
 
-def generate(feed: list, count: int, budget: float | None, balance: float | None) -> list:
-    if budget is not None:
+def generate(feed: list, count: int, balance: float | None, per_cap: float) -> list:
+    if balance is not None:
         money = (
-            f"Your treasury holds about {balance:g} SOL. You have a budget of {budget:g} SOL "
-            f"for this whole batch — the sum of all rewards must NOT exceed it. Size rewards to "
-            f"the runway: lean and few when funds are tight, more generous when there's room. "
-            f"Each reward stays in the {SOL_MIN}–{SOL_MAX} SOL band."
+            f"The treasury holds about {balance:g} SOL, so keep rewards sized to that: each "
+            f"reward between {SOL_MIN} and {per_cap:g} SOL, varied across the batch (mix small "
+            f"and bigger ones). Bigger rewards for bigger lifts."
         )
     else:
         money = f"Vary reward sizes across the batch, in the {SOL_MIN}–{SOL_MAX} SOL band."
 
     prompt = (
-        f"Generate up to {count} brand-new bounties as a batch. Follow the spec and quality "
+        f"Generate {count} brand-new bounties as a batch. Follow the spec and quality "
         f"bar exactly. Do NOT repeat any concept, angle, reward, or phrasing from these recent "
         f"drops:\n\n{recent_block(feed)}\n\n"
-        f"Vary categories. {money}"
+        f"Vary categories and lean bold and creative. {money}"
     )
     resp = client().responses.create(
         model=MODEL,
@@ -319,29 +335,20 @@ def main() -> int:
     feed = load_feed()
     seen = {slug(b.get("title", "")) for b in feed}
 
-    # Treasury-aware budgeting (read-only; no private key).
-    budget: float | None = None
+    # Treasury-aware reward sizing (read-only; no private key). Scales reward size to
+    # available funds but never freezes generation — the board stays live.
     balance: float | None = None
-    count = BATCH
+    per_cap = SOL_MAX
     if TREASURY_ADDRESS:
         balance = treasury_sol(TREASURY_ADDRESS)
         if balance is None:
-            print("Treasury unreadable; skipping run to stay safe.")
-            return 0
-        max_open = balance * COMMIT_FRACTION
-        committed = open_value(feed)
-        budget = max(0.0, max_open - committed)
-        print(
-            f"Treasury {balance:g} SOL · max open {max_open:g} · already open {committed:g} "
-            f"· budget this run {budget:g} SOL"
-        )
-        if budget < SOL_MIN:
-            print("No budget headroom for new bounties this run; feed unchanged.")
-            return 0
-        count = max(1, min(BATCH, int(budget // SOL_MIN)))
+            print("Treasury unreadable; generating with default reward sizing.")
+        else:
+            per_cap = max(SOL_MIN, min(SOL_MAX, balance * COMMIT_FRACTION))
+            print(f"Treasury {balance:g} SOL · per-bounty reward cap {per_cap:g} SOL")
 
     try:
-        raw = generate(feed, count, budget, balance)
+        raw = generate(feed, BATCH, balance, per_cap)
     except Exception as e:  # noqa: BLE001
         print(f"generation failed: {e}", file=sys.stderr)
         return 1
@@ -349,15 +356,9 @@ def main() -> int:
     raw = polish(raw)
 
     fresh = []
-    spent = 0.0
     for b in raw:
-        remaining = (budget - spent) if budget is not None else SOL_MAX
-        if remaining < SOL_MIN:
-            print("  budget exhausted for this run")
-            break
-        ok = accept(b, seen, cap=remaining)
+        ok = accept(b, seen, cap=per_cap)
         if ok:
-            spent += ok["rewardSol"]
             print(f"  ✓ {ok['reward']:>8}  [{ok['category']}] {ok['title']}")
             fresh.append(ok)
 
@@ -365,9 +366,11 @@ def main() -> int:
         print("No bounties passed the gate this run; feed unchanged.")
         return 0
 
-    updated = (fresh + feed)[:MAX_FEED]
+    live = [b for b in feed if is_live(b)]
+    dropped = len(feed) - len(live)
+    updated = (fresh + live)[:MAX_FEED]
     FEED.write_text(json.dumps(updated, indent=2, ensure_ascii=False) + "\n")
-    print(f"Wrote {len(fresh)} new bounties → {FEED} ({len(updated)} total).")
+    print(f"Wrote {len(fresh)} new, pruned {dropped} expired → {FEED} ({len(updated)} live).")
     return 0
 
 

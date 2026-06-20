@@ -46,6 +46,11 @@ Favor the fun categories (meme, design, content, IRL stunts, community) over dry
 data/research grinds. A bounty can still be useful, but if it reads like homework,
 rewrite it into something with a spark. Still concrete, still verifiable, still safe.
 
+Avoid the tired archetypes: generic "write an explainer thread", "find N communities
+or accounts" lists, plain data pulls, "make 3 captions". They are boring and you keep
+defaulting to them — don't. If a task is research- or dev-shaped, give it a real
+creative hook (a tool people will actually use, a challenge, a bit). Surprise me.
+
 ## The quality bar (do not break this)
 
 Every bounty MUST do at least one of:
