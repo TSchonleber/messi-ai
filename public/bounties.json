@@ -1,130 +1,50 @@
 [
   {
-    "id": "2026-06-20-rosario-bus-stop-match-poster-93a494",
-    "createdAt": "2026-06-20T01:02:05Z",
-    "title": "Rosario Bus Stop Match Poster",
-    "reward": "0.75 SOL",
-    "rewardSol": 0.75,
+    "id": "2026-06-20-best-openmessi-meme-wins",
+    "createdAt": "2026-06-20T01:08:00Z",
+    "title": "Best OpenMessi Meme Wins",
+    "reward": "1 SOL",
+    "rewardSol": 1,
     "deadline": "5 days",
-    "task": "Make a fake-but-beautiful street poster for a World Cup 2026 match day, like something you'd see while waiting for the colectivo in Rosario. It should sell the feeling: nerves, hope, the GOAT debate, the last dance, all of it. Keep it original art or original design work, no lazy collage. Dale, make people want to print it.",
+    "task": "Make one original OpenMessi meme and post it on X. Funny first, shareable always — the kind people tag a friend on. Drop OpenMessi and the contract address in the post so it actually spreads the coin. Best meme by reach and laughs takes it. Dale.",
     "deliverables": [
-      "One high-res poster file in PNG or PDF, minimum 3000px on the long side",
-      "One square preview image posted publicly (X, Instagram, or Behance) with a live link",
-      "A short note listing the references used and confirming all assets are original or properly licensed"
+      "Public X post link with an original meme, mentioning OpenMessi + the contract address",
+      "The original image or video file (drive or paste link)",
+      "Screenshot after 48 hours showing 5,000+ views, timestamp visible, no botted engagement"
     ],
-    "category": "design",
+    "category": "meme",
     "status": "fresh"
   },
   {
-    "id": "2026-06-20-openmessi-penalty-pressure-mini-game-0ffd7f",
-    "createdAt": "2026-06-20T01:02:07Z",
-    "title": "OpenMessi Penalty Pressure Mini Game",
-    "reward": "1.5 SOL",
-    "rewardSol": 1.5,
-    "deadline": "7 days",
-    "task": "Build a tiny browser game about pressure. One shot, one keeper, one crowd, and that horrible little silence before the run-up. Theme it around World Cup nerves and OpenMessi flavor, but keep it lightweight enough to open quickly on a phone or laptop. If it has charm, even better. Uf, pressure is part of it.",
+    "id": "2026-06-20-ten-second-no-look-challenge",
+    "createdAt": "2026-06-20T01:08:01Z",
+    "title": "Ten-Second No-Look Challenge",
+    "reward": "1 SOL",
+    "rewardSol": 1,
+    "deadline": "5 days",
+    "task": "Film a 10-second clip pulling off a no-look pass, nutmeg, or one clean trick — somewhere safe and legal. Put OpenMessi and the CA on screen or in the caption, and post it where it can run: TikTok, Reels, or X. Make it rewatchable, che.",
     "deliverables": [
-      "Public GitHub repo with source code and a clear README explaining how to run it",
-      "Live playable link on Vercel, Netlify, or similar",
-      "Short screen recording under 45 seconds showing one full playthrough with a visible timestamp"
-    ],
-    "category": "dev",
-    "status": "fresh"
-  },
-  {
-    "id": "2026-06-20-goat-debate-street-interview-reel-5c2520",
-    "createdAt": "2026-06-20T01:02:08Z",
-    "title": "GOAT Debate Street Interview Reel",
-    "reward": "0.5 SOL",
-    "rewardSol": 0.5,
-    "deadline": "72 hours",
-    "task": "Go outside and ask 5 real people one simple question: who is the GOAT, and why? Keep it friendly, fast, and safe. Then cut the answers into one short vertical reel that lands on Messi, the World Cup 2026 mood, or the chaos of the debate. No staged fake vox pops, che. Real people, real reactions.",
-    "deliverables": [
-      "One public vertical video link (TikTok, Instagram Reels, or YouTube Shorts) between 20 and 60 seconds",
-      "Raw clip compilation or contact sheet showing at least 5 different interviewees",
-      "One screenshot after posting that shows the video is live and the account handle is visible"
+      "Public video link (TikTok, Reels, or X), kept live through the deadline",
+      "OpenMessi and the contract address visible on screen or in the caption",
+      "Screenshot after 48 hours showing 5,000+ views with timestamp"
     ],
     "category": "irl",
     "status": "fresh"
   },
   {
-    "id": "2026-06-20-commentator-dub-over-my-goal-18fc23",
-    "createdAt": "2026-06-20T01:02:09Z",
-    "title": "Commentator Dub Over My Goal",
-    "reward": "0.5 SOL",
-    "rewardSol": 0.5,
-    "deadline": "4 days",
-    "task": "Take one public-domain or self-made football-style clip and dub it like the most dramatic commentator on earth has just seen my winning goal in 2026. It can be serious, absurd, or dryly funny, but the writing has to carry it. Keep it clean and sharp. The point is the voice crack, the overreaction, the little madness. Vamos.",
-    "deliverables": [
-      "One public video post with the dubbed clip, 10 to 30 seconds long",
-      "A text transcript of the commentary as submitted",
-      "Proof of source rights: either your original clip, a public-domain source link, or a clear statement that all visuals are self-created"
-    ],
-    "category": "content",
-    "status": "fresh"
-  },
-  {
-    "id": "2026-06-20-napkin-contract-poster-matchday-ready-50a53a",
-    "createdAt": "2026-06-20T01:01:04Z",
-    "title": "Napkin Contract Poster, Matchday Ready",
-    "reward": "0.75 SOL",
-    "rewardSol": 0.75,
-    "deadline": "5 days",
-    "task": "Design a clean poster around the napkin contract story, but make it feel alive now, not like a museum piece. The poster should work for pump.fun GO and wink at football, risk, and backing talent early. Bueno, make something people would actually repost, not just stare at once.",
-    "deliverables": [
-      "One public link to the final poster in PNG or JPG, sized for X/Twitter and Telegram",
-      "One editable source file link (Figma, PSD, or AI)",
-      "One short note naming the visual concept and any fonts or assets used"
-    ],
-    "category": "design",
-    "status": "fresh"
-  },
-  {
-    "id": "2026-06-20-world-cup-walk-in-tunnel-edit-a1774d",
-    "createdAt": "2026-06-20T01:01:06Z",
-    "title": "World Cup Walk-In Tunnel Edit",
-    "reward": "1.25 SOL",
-    "rewardSol": 1.25,
+    "id": "2026-06-20-put-openmessi-on-the-timeline",
+    "createdAt": "2026-06-20T01:08:02Z",
+    "title": "Put OpenMessi On The Timeline",
+    "reward": "1.5 SOL",
+    "rewardSol": 1.5,
     "deadline": "72 hours",
-    "task": "Make a short video edit built around that nervous, quiet walk before a big match. The theme is World Cup 2026 pressure: the GOAT noise outside, calm inside. Use pump.fun GO clearly in the story somewhere, but keep it subtle. If it feels like an ad, you lost the ball.",
+    "task": "Get OpenMessi in front of real eyes on X. Either land one original post that breaks 10,000 impressions, or get three real crypto or football accounts (10k+ followers each) to quote or repost it. Real reach only — no bots, no paid junk.",
     "deliverables": [
-      "One public video link posted on X, TikTok, or Instagram Reels and left live through review",
-      "One screenshot taken after at least 24 hours showing view count and timestamp",
-      "One downloadable file link to the final video in vertical format"
+      "Link(s) to the post(s), each mentioning OpenMessi + the contract address",
+      "Proof: a screenshot of 10,000+ impressions on one post, OR three reposts from 10k+ accounts with their follower counts visible",
+      "Posts still live and public 48 hours after submission"
     ],
-    "category": "content",
-    "status": "fresh"
-  },
-  {
-    "id": "2026-06-20-mate-cup-chant-from-your-city-7c2cee",
-    "createdAt": "2026-06-20T01:01:08Z",
-    "title": "Mate Cup Chant From Your City",
-    "reward": "0.5 SOL",
-    "rewardSol": 0.5,
-    "deadline": "6 days",
-    "task": "Record a short original chant for pump.fun GO, like your local terrace made it. Bring your city into it, bring football into it, maybe even a mate if you want, pero tranquilo, keep it safe and legal. It should be catchy enough that another person could copy it after one listen.",
-    "deliverables": [
-      "One public video link of you or your group performing the chant live",
-      "One text file or post caption with the full chant lyrics",
-      "One second clip or photo proving the chant was recorded in a recognizable public or social setting, with timestamp if possible"
-    ],
-    "category": "community",
-    "status": "fresh"
-  },
-  {
-    "id": "2026-06-20-no-look-goal-celebration-gif-pack-32cd96",
-    "createdAt": "2026-06-20T01:01:10Z",
-    "title": "No-Look GOAL Celebration GIF Pack",
-    "reward": "0.5 SOL",
-    "rewardSol": 0.5,
-    "deadline": "4 days",
-    "task": "Create a pack of 6 reaction GIFs around football celebration moods for pump.fun GO. Think no-look pass, late winner, missed sitter, keeper madness, mate-fueled confidence, that kind of thing. Keep them looping cleanly and usable in chats. Small thing, but useful every day.",
-    "deliverables": [
-      "One folder link containing 6 GIF files optimized for chat use",
-      "One preview sheet or short montage showing all 6 GIFs together",
-      "One note labeling each GIF with its intended reaction use"
-    ],
-    "category": "meme",
+    "category": "social",
     "status": "fresh"
   }
 ]

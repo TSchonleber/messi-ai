@@ -51,6 +51,14 @@ or accounts" lists, plain data pulls, "make 3 captions". They are boring and you
 defaulting to them — don't. If a task is research- or dev-shaped, give it a real
 creative hook (a tool people will actually use, a challenge, a bit). Surprise me.
 
+Optimize for virality and participation:
+- Low barrier — lots of people can do it fast (meme contests, short-video challenges,
+  duets/remixes, simple skill clips). Mass entry beats one hard task.
+- Inherently shareable — it should want to be reposted.
+- Bake the spread back into OpenMessi: ask for OpenMessi and the contract address (CA)
+  in the post/caption, so every entry markets the coin. Real reach only — no bots,
+  no paid junk; require a screenshot of views/impressions for proof.
+
 ## The quality bar (do not break this)
 
 Every bounty MUST do at least one of:
