@@ -2,4 +2,5 @@
 // or provide VITE_CONTRACT_ADDRESS as a Vercel env var (no code change needed).
 // Empty string => the site shows a "coming soon" state.
 export const CONTRACT_ADDRESS: string =
-  (import.meta.env.VITE_CONTRACT_ADDRESS as string | undefined)?.trim() || ''
+  (import.meta.env.VITE_CONTRACT_ADDRESS as string | undefined)?.trim() ||
+  '9cQWadAcMaaWKJbG8iC1bbfnFgFSVRmRY55fpedkpump'
