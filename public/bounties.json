@@ -1,5 +1,21 @@
 [
   {
+    "id": "2026-06-20-napkin-contract-poster-street-style-2202fb",
+    "createdAt": "2026-06-20T03:22:12Z",
+    "title": "Napkin Contract Poster, Street Style",
+    "reward": "1.25 SOL",
+    "rewardSol": 1.25,
+    "deadline": "5 days",
+    "task": "I want one poster that feels like the napkin contract was dragged into 2026 and landed on crypto Twitter. Make an original, print-ready poster for OpenMessi built around the napkin idea, with World Cup energy and a little attitude. Keep it clean enough that people would actually share it or paste it on a wall, che. Include OpenMessi and the CA in the design in a natural way, not like a ransom note.",
+    "deliverables": [
+      "One public link to the final poster in PNG, plus the editable source file (Figma, PSD, or AI)",
+      "One print-ready version at poster resolution and one social version sized for X/Telegram",
+      "A short proof note or caption explaining the concept, plus a mockup image showing the poster in a real-world street or stadium-style setting"
+    ],
+    "category": "design",
+    "status": "fresh"
+  },
+  {
     "id": "2026-06-20-best-openmessi-meme-wins",
     "createdAt": "2026-06-20T01:08:00Z",
     "title": "Best OpenMessi Meme Wins",
