@@ -1,5 +1,21 @@
 [
   {
+    "id": "2026-06-20-goat-debate-duet-15-seconds-16f473",
+    "createdAt": "2026-06-20T07:36:07Z",
+    "title": "GOAT Debate Duet, 15 Seconds",
+    "reward": "1.25 SOL",
+    "rewardSol": 1.25,
+    "deadline": "96 hours",
+    "task": "Make a short vertical video that plays with the GOAT debate, but keep it funny, sharp, and clean. Format: set up the debate for a few seconds, then shut it down with one football truth, one visual gag, or one cold edit that lands on OpenMessi. Mention OpenMessi and show the CA in the video or caption. Dale, make it something people actually replay.",
+    "deliverables": [
+      "Link to the public video post on X, TikTok, Instagram Reels, or YouTube Shorts, still live at submission time",
+      "Screenshot showing the caption or on-screen frame includes both 'OpenMessi' and the contract address (CA)",
+      "Screenshot of the real view count and timestamp, taken at least 12 hours after posting"
+    ],
+    "category": "content",
+    "status": "fresh"
+  },
+  {
     "id": "2026-06-20-rosario-sticker-pack-but-go-e8edac",
     "createdAt": "2026-06-20T05:43:36Z",
     "title": "Rosario Sticker Pack, But GO",
