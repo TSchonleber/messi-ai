@@ -1,5 +1,21 @@
 [
   {
+    "id": "2026-06-20-rosario-sticker-pack-but-go-e8edac",
+    "createdAt": "2026-06-20T05:43:36Z",
+    "title": "Rosario Sticker Pack, But GO",
+    "reward": "1.5 SOL",
+    "rewardSol": 1.5,
+    "deadline": "7 days",
+    "task": "Make a 12-sticker pack for OpenMessi that feels like football, Rosario, mate, and a little chaos. I want something people would actually spam in chats during the World Cup, not polite corporate art. Use OpenMessi and the CA inside the pack where it fits naturally, subtle but clear, and keep every sticker original.",
+    "deliverables": [
+      "A public folder or repo with 12 final stickers in transparent PNG format, sized for Telegram/WhatsApp use.",
+      "One preview sheet or a short demo video showing all 12 stickers together, with the OpenMessi name and CA visible on at least 4 of them.",
+      "A short text file listing the concept/title of each sticker and confirming all artwork is original and free for the project to use."
+    ],
+    "category": "design",
+    "status": "fresh"
+  },
+  {
     "id": "2026-06-20-napkin-contract-poster-street-style-2202fb",
     "createdAt": "2026-06-20T03:22:12Z",
     "title": "Napkin Contract Poster, Street Style",
