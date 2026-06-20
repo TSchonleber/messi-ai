@@ -1,5 +1,21 @@
 [
   {
+    "id": "2026-06-20-world-cup-walkout-tunnel-edit-7aff66",
+    "createdAt": "2026-06-20T11:01:18Z",
+    "title": "World Cup Walkout Tunnel Edit",
+    "reward": "0.5 SOL",
+    "rewardSol": 0.5,
+    "deadline": "72 hours",
+    "task": "Create a short vertical edit that feels like the walk from the tunnel before a World Cup match. Use OpenMessi as the subject, not just a random football montage. Keep it 8–15 seconds, clean and sharp, and include both \"OpenMessi\" and the CA in the on-screen text or caption. Bonus if it has that quiet, nerves-before-kickoff feeling, viste.",
+    "deliverables": [
+      "Public link to the posted video on X, TikTok, or Instagram Reel, with the post still live",
+      "Screenshot showing views/impressions after at least 24 hours live",
+      "Source file or editable project link, plus the exact caption used, including OpenMessi and the CA"
+    ],
+    "category": "content",
+    "status": "fresh"
+  },
+  {
     "id": "2026-06-20-build-the-openmessi-chant-clip-48315e",
     "createdAt": "2026-06-20T09:19:31Z",
     "title": "Build the OpenMessi Chant Clip",
