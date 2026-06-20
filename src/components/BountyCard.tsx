@@ -30,7 +30,13 @@ export function BountyCard({ bounty }: { bounty: Bounty }) {
     <article className="card">
       <div className="card-top">
         <span className={`tag t-${bounty.category}`}>{CATEGORY_LABEL[bounty.category]}</span>
-        {isFresh(bounty.createdAt) && <span className="fresh-dot">● fresh</span>}
+        {bounty.goUrl ? (
+          <a className="live-badge" href={bounty.goUrl} target="_blank" rel="noopener noreferrer">
+            ● live on GO
+          </a>
+        ) : (
+          isFresh(bounty.createdAt) && <span className="fresh-dot">● fresh</span>
+        )}
         <span className="reward">
           {bounty.rewardSol}
           <span className="unit"> SOL</span>
@@ -66,9 +72,15 @@ export function BountyCard({ bounty }: { bounty: Bounty }) {
         <button className="btn sm ghost" onClick={copy}>
           {copied ? 'Copied ✓' : 'Copy'}
         </button>
-        <button className="btn sm" onClick={() => void postToBounty(bounty)}>
-          Open in pump.fun GO ↗
-        </button>
+        {bounty.goUrl ? (
+          <a className="btn sm" href={bounty.goUrl} target="_blank" rel="noopener noreferrer">
+            Claim on pump.fun GO ↗
+          </a>
+        ) : (
+          <button className="btn sm" onClick={() => void postToBounty(bounty)}>
+            Open in pump.fun GO ↗
+          </button>
+        )}
       </div>
     </article>
   )

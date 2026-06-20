@@ -475,6 +475,15 @@
   letter-spacing: 0.04em;
   color: var(--sky-deep);
 }
+.live-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #0a8f3c;
+  border-bottom: 2px solid #0a8f3c;
+  animation: blink 1.6s steps(1) infinite;
+}
 .reward {
   margin-left: auto;
   font-family: 'Anton', sans-serif;

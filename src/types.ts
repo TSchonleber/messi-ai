@@ -23,4 +23,5 @@ export interface Bounty {
   deliverables: string[]
   category: BountyCategory
   status: BountyStatus
+  goUrl?: string // live pump.fun GO bounty link, once posted + funded
 }

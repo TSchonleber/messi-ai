@@ -5,7 +5,7 @@
     "title": "Best OpenMessi Meme Wins",
     "reward": "1 SOL",
     "rewardSol": 1,
-    "deadline": "5 days",
+    "deadline": "3 days",
     "task": "Make one original OpenMessi meme and post it on X. Funny first, shareable always — the kind people tag a friend on. Drop OpenMessi and the contract address in the post so it actually spreads the coin. Best meme by reach and laughs takes it. Dale.",
     "deliverables": [
       "Public X post link with an original meme, mentioning OpenMessi + the contract address",
@@ -13,7 +13,8 @@
       "Screenshot after 48 hours showing 5,000+ views, timestamp visible, no botted engagement"
     ],
     "category": "meme",
-    "status": "fresh"
+    "status": "posted",
+    "goUrl": "https://pump.fun/go/09c65129-d005-41f0-9a8e-5ec2d60474c0"
   },
   {
     "id": "2026-06-20-ten-second-no-look-challenge",
