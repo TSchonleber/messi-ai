@@ -1,5 +1,21 @@
 [
   {
+    "id": "2026-06-20-make-the-keeper-freeze-one-take-26b043",
+    "createdAt": "2026-06-20T13:50:49Z",
+    "title": "Make the Keeper Freeze, One Take",
+    "reward": "0.5 SOL",
+    "rewardSol": 0.5,
+    "deadline": "72 hours",
+    "task": "I want one clean, funny football-illusion clip: make a goalkeeper or friend go the wrong way before the shot even comes. Street pitch, park, hallway with a soft ball, whatever is safe. The post must mention OpenMessi and the CA in the caption or on-screen text. Keep it real, one take, no dangerous stuff, just a little fútbol theatre, viste.",
+    "deliverables": [
+      "Public link to the video post on X, TikTok, or Instagram Reels with OpenMessi and the CA visible in the caption or on-screen",
+      "A second uncut proof clip from another angle or a before/after setup showing the trick was done in one take",
+      "Screenshot taken after at least 24 hours showing view count/impressions on the post"
+    ],
+    "category": "irl",
+    "status": "fresh"
+  },
+  {
     "id": "2026-06-20-build-a-tiny-free-kick-filter-3ea396",
     "createdAt": "2026-06-20T11:51:20Z",
     "title": "Build a Tiny Free-Kick Filter",
