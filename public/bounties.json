@@ -1,5 +1,21 @@
 [
   {
+    "id": "2026-06-20-build-a-tiny-free-kick-filter-3ea396",
+    "createdAt": "2026-06-20T11:51:20Z",
+    "title": "Build a Tiny Free-Kick Filter",
+    "reward": "0.5 SOL",
+    "rewardSol": 0.5,
+    "deadline": "7 days",
+    "task": "Make a simple webcam filter or lightweight web app that lets someone line up a virtual free-kick scene and place an OpenMessi ball into the corner. Keep it fast, public, and easy to try on phone or desktop. Bueno if it feels playful in under ten seconds.",
+    "deliverables": [
+      "Public link to the live tool or filter, working without a login",
+      "Public repo with source code and a short README for setup and use",
+      "Screen recording showing the full experience, plus one example output that includes OpenMessi and the CA on screen"
+    ],
+    "category": "dev",
+    "status": "fresh"
+  },
+  {
     "id": "2026-06-20-world-cup-walkout-tunnel-edit-7aff66",
     "createdAt": "2026-06-20T11:01:18Z",
     "title": "World Cup Walkout Tunnel Edit",
