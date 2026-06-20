@@ -2,7 +2,7 @@ name: Leo bounty drop
 
 on:
   schedule:
-    - cron: "0 */3 * * *" # every 3 hours
+    - cron: "11 * * * *" # every hour at :11 (UTC)
   workflow_dispatch: # manual "Run workflow" button
 
 permissions:
